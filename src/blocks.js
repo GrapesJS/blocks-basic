@@ -5,9 +5,9 @@ export default function (editor, opt = {}) {
 
   if (blocks.indexOf('column1') >= 0) {
     bm.add('column1', {
-      label: '1 Column',
-      attributes: {class:'gjs-fonts gjs-f-b1'},
+      label: c.labelColumn1,
       category: 'Basic',
+      attributes: {class:'gjs-fonts gjs-f-b1'},
       content: `<div class="row" data-gjs-droppable=".cell" data-gjs-custom-name="Row">
           <div class="cell" data-gjs-draggable=".row" data-gjs-custom-name="Cell"></div>
         </div>`
@@ -16,7 +16,7 @@ export default function (editor, opt = {}) {
 
   if (blocks.indexOf('column2') >= 0) {
     bm.add('column2', {
-      label: '2 Columns',
+      label: c.labelColumn2,
       attributes: {class:'gjs-fonts gjs-f-b2'},
       category: 'Basic',
       content: `<div class="row" data-gjs-droppable=".cell" data-gjs-custom-name="Row">
@@ -28,7 +28,7 @@ export default function (editor, opt = {}) {
 
   if (blocks.indexOf('column3') >= 0) {
     bm.add('column3', {
-      label: '3 Columns',
+      label: c.labelColumn3,
       category: 'Basic',
       attributes: {class:'gjs-fonts gjs-f-b3'},
       content: `<div class="row" data-gjs-droppable=".cell" data-gjs-custom-name="Row">
@@ -41,7 +41,7 @@ export default function (editor, opt = {}) {
 
   if (blocks.indexOf('column3-7') >= 0) {
     bm.add('column3-7', {
-      label: '2 Columns 3/7',
+      label: c.labelColumn37,
       category: 'Basic',
       attributes: {class:'gjs-fonts gjs-f-b37'},
       content: `<div class="row" data-gjs-droppable=".cell" data-gjs-custom-name="Row">
@@ -51,21 +51,9 @@ export default function (editor, opt = {}) {
     });
   }
 
-  if (blocks.indexOf('section-text') >= 0) {
-    bm.add('section-text', {
-      label: 'Text section',
-      category: 'Typography',
-      attributes: {class:'gjs-fonts gjs-f-h1p'},
-      content: `<div>
-        <h1 class="heading">Insert title here</h1>
-        <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-        </div>`
-    });
-  }
-
   if (blocks.indexOf('text') >= 0) {
     bm.add('text', {
-      label: 'Text',
+      label: c.labelText,
       category: 'Basic',
       attributes: {class:'gjs-fonts gjs-f-text'},
       content: {
@@ -77,22 +65,9 @@ export default function (editor, opt = {}) {
     });
   }
 
-  if (blocks.indexOf('image') >= 0) {
-    bm.add('image', {
-      label: 'Image',
-      category: 'Basic',
-      attributes: {class:'gjs-fonts gjs-f-image'},
-      content: {
-        style: {color: 'black'},
-        type:'image',
-        activeOnRender: 1
-      },
-    });
-  }
-
   if (blocks.indexOf('link') >= 0) {
     bm.add('link', {
-      label: 'Link',
+      label: c.labelLink,
       category: 'Basic',
       attributes: {class:'fa fa-link'},
       content: {
@@ -103,21 +78,22 @@ export default function (editor, opt = {}) {
     });
   }
 
-  if (blocks.indexOf('map') >= 0) {
-    bm.add('map', {
-      label: 'Map',
-      category: 'Extra',
-      attributes: {class:'fa fa-map-o'},
+  if (blocks.indexOf('image') >= 0) {
+    bm.add('image', {
+      label: c.labelImage,
+      category: 'Basic',
+      attributes: {class:'gjs-fonts gjs-f-image'},
       content: {
-        type: 'map',
-        style: {height: '350px'}
+        style: {color: 'black'},
+        type:'image',
+        activeOnRender: 1
       },
     });
   }
 
   if (blocks.indexOf('video') >= 0) {
     bm.add('video', {
-      label: 'Video',
+      label: c.labelVideo,
       category: 'Basic',
       attributes: {class:'fa fa-youtube-play'},
       content: {
@@ -127,6 +103,18 @@ export default function (editor, opt = {}) {
           height: '350px',
           width: '615px',
         }
+      },
+    });
+  }
+
+  if (blocks.indexOf('map') >= 0) {
+    bm.add('map', {
+      label: c.labelMap,
+      category: 'Basic',
+      attributes: {class:'fa fa-map-o'},
+      content: {
+        type: 'map',
+        style: {height: '350px'}
       },
     });
   }

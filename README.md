@@ -1,26 +1,35 @@
-# GrapesJS Forms
+# GrapesJS Basic Blocks
 
-This plugin adds some basic form components and blocks to help working with forms easier
+This plugin contains some basic blocks for the GrapesJS editor
 
 [Demo](http://grapesjs.com/demo.html)
 <br/>
 
-New components:
-`form`
-`input`
-`textarea`
-`select`
-`checkbox`
-`radio`
-`button`
-`label`
+Components:
+`column1`
+`column2`
+`column3`
+`column3-7`
+`text`
+`link`
+`image`
+`video`
+`map`
 
 
 
 ## Options
 
-* `blocks` Which blocks to add, default: `['...']` (all),
-* `labelColumn1` Column label, default: '1 Column',
+* `blocks` Which blocks to add, default: `['column1', 'column2', 'column3', 'column3-7', 'text', 'link', 'image', 'video', 'map']` (all),
+* `labelColumn1` 1 Column label, default: '1 Column',
+* `labelColumn2` 2 Column label, default: '2 Columns',
+* `labelColumn3` 2 Column label, default: '3 Columns',
+* `labelColumn37` 3/7 Column label, default: '2 Columns 3/7',
+* `labelText` Text label, default: 'Text',
+* `labelLink` Link label, default: 'Link',
+* `labelImage` Image label, default: 'Image',
+* `labelVideo` Video label, default: 'Video',
+* `labelMap` Map label, default: 'Map',
 
 
 
