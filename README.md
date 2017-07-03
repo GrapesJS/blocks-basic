@@ -18,6 +18,8 @@ Components:
 
 
 
+
+
 ## Options
 
 * `blocks` Which blocks to add, default: `['column1', 'column2', 'column3', 'column3-7', 'text', 'link', 'image', 'video', 'map']` (all),
@@ -34,9 +36,13 @@ Components:
 
 
 
+
+
 ## Download
 
 * `npm i grapesjs-blocks-basic` or `yarn add grapesjs-blocks-basic`
+
+
 
 
 
@@ -60,6 +66,8 @@ Components:
   });
 </script>
 ```
+
+
 
 
 
@@ -89,6 +97,8 @@ Build before the commit. This will also increase the patch level version of the 
 ```sh
 $ npm run build
 ```
+
+
 
 
 

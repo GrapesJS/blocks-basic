@@ -1,7 +1,7 @@
 {
   "name": "grapesjs-blocks-basic",
-  "version": "0.2.5",
-  "description": "Basic blocks for GrapesJS editor",
+  "version": "0.1.1",
+  "description": "Basic blocks for the GrapesJS editor",
   "main": "dist/grapesjs-blocks-basic.min.js",
   "scripts": {
     "lint": "eslint src",
