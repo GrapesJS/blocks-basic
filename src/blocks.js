@@ -2,7 +2,7 @@ export default function (editor, opt = {}) {
   const c = opt;
   let bm = editor.BlockManager;
   let blocks = c.blocks;
-  let stylePrefix = 'blocks-basic'
+  let stylePrefix = c['stylePrefix'];
 
   if (blocks.indexOf('column1') >= 0) {
     bm.add('column1', {
