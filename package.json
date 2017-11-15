@@ -9,6 +9,10 @@
     "v:patch": "npm version --no-git-tag-version patch",
     "start": "cross-env WEBPACK_ENV=dev ./node_modules/.bin/webpack-dev-server --progress --colors"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artf/grapesjs-blocks-basic.git"
+  },
   "keywords": [
     "grapesjs",
     "plugin",
