@@ -1,20 +1,25 @@
-var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var pkg = require('./package.json');
-var env = process.env.WEBPACK_ENV;
-var name = 'grapesjs-blocks-basic';
+var webpack = require('webpack');
+var fs = require('fs');
+var name = pkg.name;
 var plugins = [];
 
-if(env !== 'dev') {
+if (process.env.WEBPACK_ENV !== 'dev') {
   plugins = [
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,
       compressor: {warnings: false},
     }),
-    new webpack.BannerPlugin(pkg.name + ' - ' + pkg.version),
+    new webpack.BannerPlugin(name + ' - ' + pkg.version),
   ]
+} else {
+  var index = 'index.html';
+  var indexDev = '_' + index;
+  plugins.push(new HtmlWebpackPlugin({
+    template: fs.existsSync(indexDev) ? indexDev : index
+  }));
 }
-
-plugins.push(new webpack.ProvidePlugin({_: 'underscore'}));
 
 module.exports = {
   entry: './src',
@@ -23,15 +28,14 @@ module.exports = {
       library: name,
       libraryTarget: 'umd',
   },
-  externals: {jquery: 'jQuery'},
-  plugins: plugins,
   module: {
     loaders: [{
         test: /\.js$/,
         loader: 'babel-loader',
         include: /src/,
-        exclude: /node_modules/,
-        query: {presets: ['es2015']}
+        exclude: /node_modules/
     }],
-  }
-}
+  },
+  externals: {'grapesjs': 'grapesjs'},
+  plugins: plugins,
+};

@@ -1,4 +1,6 @@
-grapesjs.plugins.add('gjs-blocks-basic', (editor, opts) => {
+import grapesjs from 'grapesjs';
+
+export default grapesjs.plugins.add('gjs-blocks-basic', (editor, opts) => {
   let c = opts || {};
   let stylePrefix = (c['stylePrefix'] = c['stylePrefix'] || 'blocks-basic');
 
