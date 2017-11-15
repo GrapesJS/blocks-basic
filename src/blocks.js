@@ -2,15 +2,15 @@ export default function (editor, opt = {}) {
   const c = opt;
   let bm = editor.BlockManager;
   let blocks = c.blocks;
-  let stylePrefix = c['stylePrefix'];
+  let stylePrefix = c.stylePrefix;
 
   if (blocks.indexOf('column1') >= 0) {
     bm.add('column1', {
       label: c.labelColumn1,
       category: 'Basic',
       attributes: {class:'gjs-fonts gjs-f-b1'},
-      content: `<div class="${stylePrefix}-row" data-gjs-droppable=".${stylePrefix}-cell" data-gjs-custom-name="Row">
-          <div class="${stylePrefix}-cell" data-gjs-draggable=".${stylePrefix}-row" data-gjs-custom-name="Cell"></div>
+      content: `<div class="${stylePrefix}row" data-gjs-droppable=".${stylePrefix}cell" data-gjs-custom-name="Row">
+          <div class="${stylePrefix}cell" data-gjs-draggable=".${stylePrefix}row" data-gjs-custom-name="Cell"></div>
         </div>`
     });
   }
@@ -20,9 +20,9 @@ export default function (editor, opt = {}) {
       label: c.labelColumn2,
       attributes: {class:'gjs-fonts gjs-f-b2'},
       category: 'Basic',
-      content: `<div class="${stylePrefix}-row" data-gjs-droppable=".${stylePrefix}-cell" data-gjs-custom-name="Row">
-          <div class="${stylePrefix}-cell" data-gjs-draggable=".${stylePrefix}-row" data-gjs-custom-name="Cell"></div>
-          <div class="${stylePrefix}-cell" data-gjs-draggable=".${stylePrefix}-row" data-gjs-custom-name="Cell"></div>
+      content: `<div class="${stylePrefix}row" data-gjs-droppable=".${stylePrefix}cell" data-gjs-custom-name="Row">
+          <div class="${stylePrefix}cell" data-gjs-draggable=".${stylePrefix}row" data-gjs-custom-name="Cell"></div>
+          <div class="${stylePrefix}cell" data-gjs-draggable=".${stylePrefix}row" data-gjs-custom-name="Cell"></div>
         </div>`
     });
   }
@@ -32,10 +32,10 @@ export default function (editor, opt = {}) {
       label: c.labelColumn3,
       category: 'Basic',
       attributes: {class:'gjs-fonts gjs-f-b3'},
-      content: `<div class="${stylePrefix}-row" data-gjs-droppable=".${stylePrefix}-cell" data-gjs-custom-name="Row">
-          <div class="${stylePrefix}-cell" data-gjs-draggable=".${stylePrefix}-row" data-gjs-custom-name="Cell"></div>
-          <div class="${stylePrefix}-cell" data-gjs-draggable=".${stylePrefix}-row" data-gjs-custom-name="Cell"></div>
-          <div class="${stylePrefix}-cell" data-gjs-draggable=".${stylePrefix}-row" data-gjs-custom-name="Cell"></div>
+      content: `<div class="${stylePrefix}row" data-gjs-droppable=".${stylePrefix}cell" data-gjs-custom-name="Row">
+          <div class="${stylePrefix}cell" data-gjs-draggable=".${stylePrefix}row" data-gjs-custom-name="Cell"></div>
+          <div class="${stylePrefix}cell" data-gjs-draggable=".${stylePrefix}row" data-gjs-custom-name="Cell"></div>
+          <div class="${stylePrefix}cell" data-gjs-draggable=".${stylePrefix}row" data-gjs-custom-name="Cell"></div>
         </div>`
     });
   }
@@ -45,9 +45,9 @@ export default function (editor, opt = {}) {
       label: c.labelColumn37,
       category: 'Basic',
       attributes: {class:'gjs-fonts gjs-f-b37'},
-      content: `<div class="${stylePrefix}-row" data-gjs-droppable=".${stylePrefix}-cell" data-gjs-custom-name="Row">
-          <div class="${stylePrefix}-cell ${stylePrefix}-cell30" data-gjs-draggable=".${stylePrefix}-row" data-gjs-custom-name="Cell"></div>
-          <div class="${stylePrefix}-cell ${stylePrefix}-cell70" data-gjs-draggable=".${stylePrefix}-row" data-gjs-custom-name="Cell"></div>
+      content: `<div class="${stylePrefix}row" data-gjs-droppable=".${stylePrefix}cell" data-gjs-custom-name="Row">
+          <div class="${stylePrefix}cell ${stylePrefix}cell30" data-gjs-draggable=".${stylePrefix}row" data-gjs-custom-name="Cell"></div>
+          <div class="${stylePrefix}cell ${stylePrefix}cell70" data-gjs-draggable=".${stylePrefix}row" data-gjs-custom-name="Cell"></div>
         </div>`,
     });
   }

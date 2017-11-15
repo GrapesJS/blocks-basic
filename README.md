@@ -23,6 +23,7 @@ Components:
 ## Options
 
 * `blocks` Which blocks to add, default: `['column1', 'column2', 'column3', 'column3-7', 'text', 'link', 'image', 'video', 'map']` (all),
+* `stylePrefix` Classes prefix, default: '',
 * `addBasicStyle` Add basic CSS, default: `true`,
 * `labelColumn1` 1 Column label, default: `1 Column`,
 * `labelColumn2` 2 Column label, default: `2 Columns`,

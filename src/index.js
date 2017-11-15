@@ -2,10 +2,10 @@ import grapesjs from 'grapesjs';
 
 export default grapesjs.plugins.add('gjs-blocks-basic', (editor, opts) => {
   let c = opts || {};
-  let stylePrefix = (c['stylePrefix'] = c['stylePrefix'] || 'blocks-basic');
 
   let defaults = {
     blocks: ['column1', 'column2', 'column3', 'column3-7', 'text', 'link', 'image', 'video', 'map'],
+    stylePrefix: '',
     addBasicStyle: true,
     labelColumn1: '1 Column',
     labelColumn2: '2 Columns',
@@ -23,31 +23,33 @@ export default grapesjs.plugins.add('gjs-blocks-basic', (editor, opts) => {
       c[name] = defaults[name];
   }
 
+  const stylePrefix = c.stylePrefix;
+
   if (c.addBasicStyle) {
     editor.addComponents(`
       <style>
-        .${stylePrefix}-row {
+        .${stylePrefix}row {
           display: table;
           padding: 10px;
           width: 100%;
         }
 
-        .${stylePrefix}-cell {
+        .${stylePrefix}cell {
           width: 8%;
           display: table-cell;
           height: 75px;
         }
 
-        .${stylePrefix}-cell30 {
+        .${stylePrefix}cell30 {
           width: 30%;
         }
 
-        .${stylePrefix}-cell70 {
+        .${stylePrefix}cell70 {
           width: 70%;
         }
 
         @media (max-width: 768px) {
-          .${stylePrefix}-cell, .${stylePrefix}-cell30, .${stylePrefix}-cell70 {
+          .${stylePrefix}cell, .${stylePrefix}cell30, .${stylePrefix}cell70 {
             width: 100%;
             display: block;
           }
