@@ -17,8 +17,8 @@
   ],
   "author": "Artur Arseniev",
   "license": "BSD-3-Clause",
-  "dependency": {
-    "grapesjs": "^0.8.4"
+  "dependencies": {
+    "grapesjs": "^0.12.17"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
