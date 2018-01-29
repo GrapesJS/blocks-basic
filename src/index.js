@@ -1,9 +1,7 @@
 import grapesjs from 'grapesjs';
 
-export default grapesjs.plugins.add('gjs-blocks-basic', (editor, opts) => {
-  let c = opts || {};
-
-  let defaults = {
+export default grapesjs.plugins.add('gjs-blocks-basic', (editor, opts = {}) => {
+  const config = {
     blocks: ['column1', 'column2', 'column3', 'column3-7', 'text', 'link', 'image', 'video', 'map'],
     stylePrefix: '',
     addBasicStyle: true,
@@ -16,15 +14,11 @@ export default grapesjs.plugins.add('gjs-blocks-basic', (editor, opts) => {
     labelImage: 'Image',
     labelVideo: 'Video',
     labelMap: 'Map',
+    ...opts
   };
 
-  for (let name in defaults) {
-    if (!(name in c))
-      c[name] = defaults[name];
-  }
-
   // Add blocks
-  let loadBlocks = require('./blocks');
-  loadBlocks.default(editor, c);
+  const loadBlocks = require('./blocks');
+  loadBlocks.default(editor, config);
 
 });
