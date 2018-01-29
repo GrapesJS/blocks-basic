@@ -3,6 +3,7 @@ export default function (editor, opt = {}) {
   let bm = editor.BlockManager;
   let blocks = c.blocks;
   let stylePrefix = c.stylePrefix;
+  const basicStyle = c.addBasicStyle;
   const styleRow = `
   .${stylePrefix}row {
     display: table;
@@ -38,10 +39,12 @@ export default function (editor, opt = {}) {
       content: `<div class="${stylePrefix}row" data-gjs-droppable=".${stylePrefix}cell" data-gjs-custom-name="Row">
           <div class="${stylePrefix}cell" data-gjs-draggable=".${stylePrefix}row" data-gjs-custom-name="Cell"></div>
         </div>
-        <style>
-          ${styleRow}
-          ${styleClm}
-        </style>`
+        ${ basicStyle ?
+          `<style>
+            ${styleRow}
+            ${styleClm}
+          </style>`
+          : ''}`
     });
   }
 
@@ -54,10 +57,12 @@ export default function (editor, opt = {}) {
           <div class="${stylePrefix}cell" data-gjs-draggable=".${stylePrefix}row" data-gjs-custom-name="Cell"></div>
           <div class="${stylePrefix}cell" data-gjs-draggable=".${stylePrefix}row" data-gjs-custom-name="Cell"></div>
         </div>
-        <style>
-          ${styleRow}
-          ${styleClm}
-        </style>`
+        ${ basicStyle ?
+          `<style>
+            ${styleRow}
+            ${styleClm}
+          </style>`
+          : ''}`
     });
   }
 
@@ -71,10 +76,12 @@ export default function (editor, opt = {}) {
           <div class="${stylePrefix}cell" data-gjs-draggable=".${stylePrefix}row" data-gjs-custom-name="Cell"></div>
           <div class="${stylePrefix}cell" data-gjs-draggable=".${stylePrefix}row" data-gjs-custom-name="Cell"></div>
         </div>
-        <style>
-          ${styleRow}
-          ${styleClm}
-        </style>`
+        ${ basicStyle ?
+          `<style>
+            ${styleRow}
+            ${styleClm}
+          </style>`
+          : ''}`
     });
   }
 
@@ -87,12 +94,14 @@ export default function (editor, opt = {}) {
           <div class="${stylePrefix}cell ${stylePrefix}cell30" data-gjs-draggable=".${stylePrefix}row" data-gjs-custom-name="Cell"></div>
           <div class="${stylePrefix}cell ${stylePrefix}cell70" data-gjs-draggable=".${stylePrefix}row" data-gjs-custom-name="Cell"></div>
         </div>
-        <style>
-          ${styleRow}
-          ${styleClm}
-          ${styleClm30}
-          ${styleClm70}
-        </style>`,
+        ${ basicStyle ? 
+          `<style>
+            ${styleRow}
+            ${styleClm}
+            ${styleClm30}
+            ${styleClm70}
+          </style>`
+          : ''}`
     });
   }
 
