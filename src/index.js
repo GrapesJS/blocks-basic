@@ -23,41 +23,6 @@ export default grapesjs.plugins.add('gjs-blocks-basic', (editor, opts) => {
       c[name] = defaults[name];
   }
 
-  const stylePrefix = c.stylePrefix;
-
-  if (c.addBasicStyle) {
-    editor.addComponents(`
-      <style>
-        .${stylePrefix}row {
-          display: table;
-          padding: 10px;
-          width: 100%;
-        }
-
-        .${stylePrefix}cell {
-          width: 8%;
-          display: table-cell;
-          height: 75px;
-        }
-
-        .${stylePrefix}cell30 {
-          width: 30%;
-        }
-
-        .${stylePrefix}cell70 {
-          width: 70%;
-        }
-
-        @media (max-width: 768px) {
-          .${stylePrefix}cell, .${stylePrefix}cell30, .${stylePrefix}cell70 {
-            width: 100%;
-            display: block;
-          }
-        }
-      </style>
-      `);
-  }
-
   // Add blocks
   let loadBlocks = require('./blocks');
   loadBlocks.default(editor, c);
