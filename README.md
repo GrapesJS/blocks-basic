@@ -23,6 +23,7 @@ This plugin contains some basic blocks for the GrapesJS editor
 |Option|Description|Default|
 |-|-|-
 |`blocks`|Which blocks to add|`['column1', 'column2', 'column3', 'column3-7', 'text', 'link', 'image', 'video', 'map']` (all)|
+|`flexGrid`|Make use of flexbox for the grid|`true`|
 |`stylePrefix`|Classes prefix|`''`|
 |`addBasicStyle`|Use basic CSS for blocks|`true`|
 |`labelColumn1`|1 Column label|`1 Column`|
