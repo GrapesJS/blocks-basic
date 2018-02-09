@@ -51,19 +51,65 @@ export default function (editor, opt = {}) {
     width: 70%;
   }`;
 
+  const step = 0.2;
+  const minDim = 1;
+  const currentUnit = 1;
+  const resizerBtm = { tl: 0, tc: 0, tr: 0, cl: 0, cr:0, bl:0, br: 0, minDim };
+  const resizerRight = { ...resizerBtm, cr: 1, bc: 0, currentUnit, minDim, step };
+
+  // Flex elements do not react on width style change therefore I use
+  // 'flex-basis' as keyWidth for the resizer on columns
+  if (flexGrid) {
+    resizerRight.keyWidth = 'flex-basis';
+  }
+
+  const rowAttr = {
+    class: clsRow,
+    'data-gjs-droppable': `.${clsCell}`,
+    'data-gjs-resizable': resizerBtm,
+    'data-gjs-name': 'Row',
+  };
+
+  const colAttr = {
+    class: clsCell,
+    'data-gjs-draggable': `.${clsRow}`,
+    'data-gjs-resizable': resizerRight,
+    'data-gjs-name': 'Cell',
+  };
+
+  if (flexGrid) {
+    colAttr['data-gjs-unstylable'] = ['width'];
+    colAttr['data-gjs-stylable-require'] = ['flex-basis'];
+  }
+
   // Make row and column classes private
   const privateCls = [`.${clsRow}`, `.${clsCell}`];
   editor.on('selector:add', selector =>
     privateCls.indexOf(selector.getFullName()) >= 0 && selector.set('private', 1))
 
+  const attrsToString = attrs => {
+    const result = [];
+
+    for (let key in attrs) {
+      let value = attrs[key];
+      const toParse = value instanceof Array || value instanceof Object;
+      value = toParse ? JSON.stringify(value) : value;
+      result.push(`${key}=${toParse ? `'${value}'` : `"${value}"`}`);
+    }
+
+    return result.length ? ` ${result.join(' ')}` : '';
+  }
+
   const toAdd = name => blocks.indexOf(name) >= 0;
+  const attrsRow = attrsToString(rowAttr);
+  const attrsCell = attrsToString(colAttr);
 
   toAdd('column1') && bm.add('column1', {
     label: c.labelColumn1,
     category: 'Basic',
     attributes: {class:'gjs-fonts gjs-f-b1'},
-    content: `<div class="${stylePrefix}row" data-gjs-droppable=".${stylePrefix}cell" data-gjs-custom-name="Row">
-        <div class="${stylePrefix}cell" data-gjs-draggable=".${stylePrefix}row" data-gjs-custom-name="Cell"></div>
+    content: `<div ${attrsRow}>
+        <div ${attrsCell}></div>
       </div>
       ${ basicStyle ?
         `<style>
@@ -77,9 +123,9 @@ export default function (editor, opt = {}) {
     label: c.labelColumn2,
     attributes: {class:'gjs-fonts gjs-f-b2'},
     category: 'Basic',
-    content: `<div class="${stylePrefix}row" data-gjs-droppable=".${stylePrefix}cell" data-gjs-custom-name="Row">
-        <div class="${stylePrefix}cell" data-gjs-draggable=".${stylePrefix}row" data-gjs-custom-name="Cell"></div>
-        <div class="${stylePrefix}cell" data-gjs-draggable=".${stylePrefix}row" data-gjs-custom-name="Cell"></div>
+    content: `<div ${attrsRow}>
+        <div ${attrsCell}></div>
+        <div ${attrsCell}></div>
       </div>
       ${ basicStyle ?
         `<style>
@@ -93,10 +139,10 @@ export default function (editor, opt = {}) {
     label: c.labelColumn3,
     category: 'Basic',
     attributes: {class:'gjs-fonts gjs-f-b3'},
-    content: `<div class="${stylePrefix}row" data-gjs-droppable=".${stylePrefix}cell" data-gjs-custom-name="Row">
-        <div class="${stylePrefix}cell" data-gjs-draggable=".${stylePrefix}row" data-gjs-custom-name="Cell"></div>
-        <div class="${stylePrefix}cell" data-gjs-draggable=".${stylePrefix}row" data-gjs-custom-name="Cell"></div>
-        <div class="${stylePrefix}cell" data-gjs-draggable=".${stylePrefix}row" data-gjs-custom-name="Cell"></div>
+    content: `<div ${attrsRow}>
+        <div ${attrsCell}></div>
+        <div ${attrsCell}></div>
+        <div ${attrsCell}></div>
       </div>
       ${ basicStyle ?
         `<style>
@@ -110,9 +156,9 @@ export default function (editor, opt = {}) {
     label: c.labelColumn37,
     category: 'Basic',
     attributes: {class:'gjs-fonts gjs-f-b37'},
-    content: `<div class="${stylePrefix}row" data-gjs-droppable=".${stylePrefix}cell" data-gjs-custom-name="Row">
-        <div class="${stylePrefix}cell ${stylePrefix}cell30" data-gjs-draggable=".${stylePrefix}row" data-gjs-custom-name="Cell"></div>
-        <div class="${stylePrefix}cell ${stylePrefix}cell70" data-gjs-draggable=".${stylePrefix}row" data-gjs-custom-name="Cell"></div>
+    content: `<div ${attrsRow}>
+        <div ${attrsCell} style="${flexGrid ? 'flex-basis' : 'width'}: 30%;"></div>
+        <div ${attrsCell} style="${flexGrid ? 'flex-basis' : 'width'}: 70%;"></div>
       </div>
       ${ basicStyle ?
         `<style>
