@@ -6,6 +6,7 @@ export default grapesjs.plugins.add('gjs-blocks-basic', (editor, opts = {}) => {
     flexGrid: 0,
     stylePrefix: '',
     addBasicStyle: true,
+    category: 'Basic',
     labelColumn1: '1 Column',
     labelColumn2: '2 Columns',
     labelColumn3: '3 Columns',
