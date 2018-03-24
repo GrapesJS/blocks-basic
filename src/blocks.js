@@ -106,7 +106,7 @@ export default function (editor, opt = {}) {
 
   toAdd('column1') && bm.add('column1', {
     label: c.labelColumn1,
-    category: 'Basic',
+    category: c.category,
     attributes: {class:'gjs-fonts gjs-f-b1'},
     content: `<div ${attrsRow}>
         <div ${attrsCell}></div>
@@ -122,7 +122,7 @@ export default function (editor, opt = {}) {
   toAdd('column2') && bm.add('column2', {
     label: c.labelColumn2,
     attributes: {class:'gjs-fonts gjs-f-b2'},
-    category: 'Basic',
+    category: c.category,
     content: `<div ${attrsRow}>
         <div ${attrsCell}></div>
         <div ${attrsCell}></div>
@@ -137,7 +137,7 @@ export default function (editor, opt = {}) {
 
   toAdd('column3') && bm.add('column3', {
     label: c.labelColumn3,
-    category: 'Basic',
+    category: c.category,
     attributes: {class:'gjs-fonts gjs-f-b3'},
     content: `<div ${attrsRow}>
         <div ${attrsCell}></div>
@@ -154,7 +154,7 @@ export default function (editor, opt = {}) {
 
   toAdd('column3-7') && bm.add('column3-7', {
     label: c.labelColumn37,
-    category: 'Basic',
+    category: c.category,
     attributes: {class:'gjs-fonts gjs-f-b37'},
     content: `<div ${attrsRow}>
         <div ${attrsCell} style="${flexGrid ? 'flex-basis' : 'width'}: 30%;"></div>
@@ -172,7 +172,7 @@ export default function (editor, opt = {}) {
 
   toAdd('text') && bm.add('text', {
     label: c.labelText,
-    category: 'Basic',
+    category: c.category,
     attributes: {class:'gjs-fonts gjs-f-text'},
     content: {
       type:'text',
@@ -184,7 +184,7 @@ export default function (editor, opt = {}) {
 
   toAdd('link') && bm.add('link', {
     label: c.labelLink,
-    category: 'Basic',
+    category: c.category,
     attributes: {class:'fa fa-link'},
     content: {
       type:'link',
@@ -195,7 +195,7 @@ export default function (editor, opt = {}) {
 
   toAdd('image') && bm.add('image', {
     label: c.labelImage,
-    category: 'Basic',
+    category: c.category,
     attributes: {class:'gjs-fonts gjs-f-image'},
     content: {
       style: {color: 'black'},
@@ -206,7 +206,7 @@ export default function (editor, opt = {}) {
 
   toAdd('video') && bm.add('video', {
     label: c.labelVideo,
-    category: 'Basic',
+    category: c.category,
     attributes: {class:'fa fa-youtube-play'},
     content: {
       type: 'video',
@@ -220,7 +220,7 @@ export default function (editor, opt = {}) {
 
   toAdd('map') && bm.add('map', {
     label: c.labelMap,
-    category: 'Basic',
+    category: c.category,
     attributes: {class:'fa fa-map-o'},
     content: {
       type: 'map',
