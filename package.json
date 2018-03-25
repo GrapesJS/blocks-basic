@@ -1,6 +1,6 @@
 {
   "name": "grapesjs-blocks-basic",
-  "version": "0.1.5",
+  "version": "0.1.7",
   "description": "Basic blocks for the GrapesJS editor",
   "main": "dist/grapesjs-blocks-basic.min.js",
   "scripts": {
