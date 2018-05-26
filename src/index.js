@@ -4,7 +4,7 @@ export default grapesjs.plugins.add('gjs-blocks-basic', (editor, opts = {}) => {
   const config = {
     blocks: ['column1', 'column2', 'column3', 'column3-7', 'text', 'link', 'image', 'video', 'map'],
     flexGrid: 0,
-    stylePrefix: '',
+    stylePrefix: 'gjs-',
     addBasicStyle: true,
     category: 'Basic',
     labelColumn1: '1 Column',
