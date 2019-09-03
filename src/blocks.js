@@ -207,7 +207,7 @@ export default function (editor, opt = {}) {
   toAdd('video') && bm.add('video', {
     label: c.labelVideo,
     category: c.category,
-    attributes: {class:'fa fa-youtube-play'},
+    attributes: {class:'fa fa-video'},
     content: {
       type: 'video',
       src: 'img/video2.webm',
@@ -221,7 +221,7 @@ export default function (editor, opt = {}) {
   toAdd('map') && bm.add('map', {
     label: c.labelMap,
     category: c.category,
-    attributes: {class:'fa fa-map-o'},
+    attributes: {class:'fa fa-map'},
     content: {
       type: 'map',
       style: {height: '350px'}
