@@ -28,7 +28,7 @@ This plugin contains some basic blocks for the GrapesJS editor
 | `labelImage`    | Image label                      | `Image`                                                                                         |
 | `labelVideo`    | Video label                      | `Video`                                                                                         |
 | `labelMap`      | Map label                        | `Map`                                                                                           |
-| `rowHeight`     | Initial height                   | `75px`                                                                                          |
+| `rowHeight`     | Initial height                   | `75`                                                                                          |
 
 ## Download
 
