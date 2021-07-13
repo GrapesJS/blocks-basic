@@ -78,6 +78,8 @@ export default function(editor, opt = {}) {
     step
   };
 
+  console.log("options",c);
+
   // Flex elements do not react on width style change therefore I use
   // 'flex-basis' as keyWidth for the resizer on columns
   if (flexGrid) {
