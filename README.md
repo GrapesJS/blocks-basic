@@ -32,15 +32,18 @@ This plugin contains some basic blocks for the GrapesJS editor
 
 ## Download
 
-- `npm i grapesjs-blocks-basic`
+* CDN
+  * `https://unpkg.com/grapesjs-blocks-basic`
+* NPM
+  * `npm i grapesjs-blocks-basic`
+* GIT
+  * `git clone https://github.com/artf/grapesjs-blocks-basic.git`
 
 ## Usage
 
+Directly in the browser
 ```html
-<link
-  href="https://unpkg.com/grapesjs/dist/css/grapes.min.css"
-  rel="stylesheet"
-/>
+<link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet"/>
 <script src="https://unpkg.com/grapesjs"></script>
 <script src="path/to/grapesjs-blocks-basic.min.js"></script>
 
@@ -60,6 +63,25 @@ This plugin contains some basic blocks for the GrapesJS editor
 </script>
 ```
 
+Modern javascript
+```js
+import grapesjs from 'grapesjs';
+import plugin from 'grapesjs-blocks-basic';
+
+const editor = grapesjs.init({
+  container : '#gjs',
+  // ...
+  plugins: [plugin],
+  pluginsOpts: {
+    [plugin]: { /* options */ }
+  }
+  // or
+  plugins: [
+    editor => plugin(editor, { /* options */ }),
+  ],
+});
+```
+
 ## Development
 
 Clone the repository
@@ -75,17 +97,18 @@ Install it
 $ npm i
 ```
 
-The plugin relies on GrapesJS via `peerDependencies` so you have to install it manually (without adding it to package.json)
-
-```sh
-$ npm i grapesjs --no-save
-```
-
 Start the dev server
 
 ```sh
 $ npm start
 ```
+
+Build before the commit. This will also increase the patch level version of the package
+
+```sh
+$ npm run build
+```
+
 
 ## License
 
