@@ -94,7 +94,7 @@ export type PluginOptions = {
 };
 
 const plugin: grapesjs.Plugin<PluginOptions> = (editor, opts = {}) => {
-  const config: PluginOptions = {
+  const config: Required<PluginOptions> = {
     blocks: [
       'column1',
       'column2',
