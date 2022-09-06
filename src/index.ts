@@ -1,6 +1,7 @@
-import grapesjs from 'grapesjs';
+import loadBlocks from './blocks';
+import type grapesjs from 'grapesjs';
 
-export default grapesjs.plugins.add('gjs-blocks-basic', (editor, opts = {}) => {
+const plugin: grapesjs.Plugin = (editor, opts = {}) => {
   const config = {
     blocks: [
       'column1',
@@ -30,7 +31,7 @@ export default grapesjs.plugins.add('gjs-blocks-basic', (editor, opts = {}) => {
     ...opts
   };
 
-  // Add blocks
-  const loadBlocks = require('./blocks');
-  loadBlocks.default(editor, config);
-});
+  loadBlocks(editor, config);
+};
+
+export default plugin;
