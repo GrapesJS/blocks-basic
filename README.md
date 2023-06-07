@@ -37,7 +37,7 @@ This plugin contains some basic blocks for the GrapesJS editor
 * NPM
   * `npm i grapesjs-blocks-basic`
 * GIT
-  * `git clone https://github.com/artf/grapesjs-blocks-basic.git`
+  * `git clone https://github.com/GrapesJS/blocks-basic.git`
 
 ## Usage
 
@@ -87,7 +87,7 @@ const editor = grapesjs.init({
 Clone the repository
 
 ```sh
-$ git clone https://github.com/artf/grapesjs-blocks-basic.git
+$ git clone https://github.com/GrapesJS/blocks-basic.git
 $ cd grapesjs-blocks-basic
 ```
 
