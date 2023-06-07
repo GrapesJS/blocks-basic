@@ -16,7 +16,7 @@
     <div id="gjs" style="height:0px; overflow:hidden"></div>
 
     <script type="text/javascript">
-      setTimeout(() => {
+      window.onload = () => {
         window.editor = grapesjs.init({
           height: '100%',
           noticeOnUnload: false,
@@ -28,7 +28,7 @@
             'gjs-blocks-basic': {}
           }
         });
-      });
+      }
     </script>
   </body>
 </html>
