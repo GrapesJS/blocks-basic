@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/artf/grapesjs-blocks-basic.git"
+    "url": "https://github.com/GrapesJS/blocks-basic.git"
   },
   "keywords": [
     "grapesjs",
@@ -23,7 +23,7 @@
   "author": "Artur Arseniev",
   "license": "BSD-3-Clause",
   "devDependencies": {
-    "grapesjs": "^0.19.5",
-    "grapesjs-cli": "^3.0.1"
+    "grapesjs": "^0.21.2",
+    "grapesjs-cli": "^4.1.0"
   }
 }
