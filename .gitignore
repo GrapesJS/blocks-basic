@@ -4,6 +4,7 @@
 .project
 .eslintrc
 .idea
+.npmrc
 npm-debug.log
 _index.html
 
