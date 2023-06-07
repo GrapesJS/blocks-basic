@@ -1,6 +1,6 @@
 {
   "name": "grapesjs-blocks-basic",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "Basic blocks for the GrapesJS editor",
   "main": "dist/index.js",
   "files": [
@@ -24,6 +24,6 @@
   "license": "BSD-3-Clause",
   "devDependencies": {
     "grapesjs": "^0.21.2",
-    "grapesjs-cli": "^4.1.0"
+    "grapesjs-cli": "^4.1.1"
   }
 }

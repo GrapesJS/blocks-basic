@@ -1,4 +1,4 @@
-export default ({ config }) => ({
+module.exports = ({ config }) => ({
   ...config,
   output: {
     ...config.output,
