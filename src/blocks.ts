@@ -1,7 +1,7 @@
-import type grapesjs from 'grapesjs';
+import type { Editor, BlockProperties } from 'grapesjs';
 import { PluginOptions } from '.';
 
-export default function(editor: grapesjs.Editor, opts: Required<PluginOptions>) {
+export default function(editor: Editor, opts: Required<PluginOptions>) {
   const bm = editor.BlockManager;
   const { category, blocks, stylePrefix, flexGrid, rowHeight, addBasicStyle } = opts;
   const clsRow = `${stylePrefix}row`;
@@ -126,7 +126,7 @@ export default function(editor: grapesjs.Editor, opts: Required<PluginOptions>) 
   const toAdd = (name: string) => blocks.indexOf(name) >= 0;
   const attrsRow = attrsToString(rowAttr);
   const attrsCell = attrsToString(colAttr);
-  const commonBlockProps: Partial<grapesjs.BlockOptions> = {
+  const commonBlockProps: Partial<BlockProperties> = {
     category,
     select: true,
   };
